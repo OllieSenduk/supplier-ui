@@ -27,19 +27,14 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [{ src: '~/plugins/vuetify.js', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    [
-      '@nuxtjs/vuetify',
-      {
-        /* module options */
-      }
-    ]
+    '@nuxtjs/vuetify'
   ],
   /*
    ** Nuxt.js modules
@@ -49,7 +44,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
+    '@nuxtjs/bulma'
   ],
   /*
    ** Axios module configuration
@@ -72,6 +68,13 @@ export default {
           loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
+      }
+    },
+    postcss: {
+      preset: {
+        features: {
+          customProperties: false
+        }
       }
     }
   }
