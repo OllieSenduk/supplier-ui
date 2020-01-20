@@ -19,10 +19,10 @@ export default class FormBuilders {
           'v-input--is-dirty',
           'theme--light',
           'v-text-field',
-          'v-text-field--is-booted'
+          'v-text-field--is-booted',
+          'mb-6'
         ]
       },
-      // ADD PRE ICON HERE
       [
         render(
           'div',
@@ -43,10 +43,24 @@ export default class FormBuilders {
                     class: ['v-text-field__slot']
                   },
                   [
-                    render('label', {
-                      class: ['v-label', 'v-label--active', 'theme--light']
-                    }),
-                    render('input')
+                    render(
+                      'label',
+                      {
+                        class: ['v-label', 'v-label--active', 'theme--light'],
+                        style: {
+                          left: '0px',
+                          right: 'auto',
+                          position: 'absolute'
+                        }
+                      },
+                      fieldData.name
+                    ),
+                    render('input', {
+                      domProps: {
+                        name: fieldData.name,
+                        type: fieldData.type
+                      }
+                    })
                   ]
                 )
               ]
@@ -110,6 +124,37 @@ export default class FormBuilders {
               style: {
                 height: '100%'
               }
+            },
+            text
+          )
+        ]
+      )
+    )
+  }
+
+  setSubmit(text) {
+    const render = this.h
+
+    this.fields.push(
+      render(
+        'div',
+        {
+          class: ['v-card__actions']
+        },
+        [
+          render('div', {
+            class: ['spacer']
+          }),
+          render(
+            'button',
+            {
+              class: [
+                'v-btn',
+                'v-btn--contained',
+                'theme--light',
+                'v-size--default',
+                'primary'
+              ]
             },
             text
           )

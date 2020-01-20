@@ -1,6 +1,5 @@
 export default class FormDirector {
   makeUserSignInForm(builder) {
-    console.log(builder)
     builder.setHeader('Login')
     builder.setFields([
       {
@@ -13,5 +12,6 @@ export default class FormDirector {
         type: 'password'
       }
     ])
+    builder.setSubmit('Sign In')
   }
 }
