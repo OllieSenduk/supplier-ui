@@ -12,6 +12,7 @@ export default class FormDirector {
         type: 'password'
       }
     ])
-    builder.setSubmit('Sign In')
+
+    builder.setSubmit('Login')
   }
 }
