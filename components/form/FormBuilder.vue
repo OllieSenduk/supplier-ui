@@ -1,5 +1,4 @@
 <script>
-/* eslint-disable */
 import FormBuilders from './FormBuilders.js'
 import FormDirector from './FormDirector.js'
 
