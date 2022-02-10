@@ -37,7 +37,7 @@
     "eslint-plugin-vue": "^6.1.2",
     "jest": "^24.1.0",
     "material-design-icons-iconfont": "^5.0.1",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
     "vue-jest": "^4.0.0-0"
